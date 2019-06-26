@@ -181,6 +181,29 @@ google_analytics: ''
 #是否开启分享
 share_jia: true
 
+# gittalk评论功能
+
+#gittalk: true
+#gittalk_clientID: '5d338060345eb8cb45ea'
+#gittalk_clientSecret: '059c85a52ebe794cb93b1100482e4f0f53d11d43'
+#gittalk_repo: 'alitaicon.github.io'
+#gittalk_owner: 'AlitaIcon'
+#gittalk_admin: ['AlitaIcon']
+
+
+# valine配置 评论功能
+#6、Valine https://valine.js.org
+# valine_appid: '填写leancloud的appid'
+# valine_appkey: '填写leancloud的appkey'
+
+#valine: 
+# appid:  #Leancloud应用的appId
+# appkey:  #Leancloud应用的appKey
+# verify: false #验证码
+# notify: false #评论回复提醒
+# avatar: mm #评论列表头像样式：''/mm/identicon/monsterid/wavatar/retro/hide
+# placeholder: Just go go #评论框占位符
+
 #评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment
 #不需要使用某项，直接设置值为false，或注释掉
 #具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
@@ -199,11 +222,11 @@ changyan_conf: false
 disqus: false
 
 #5、Gitment
-gitment_owner: false      #你的 GitHub ID
-gitment_repo: ''          #存储评论的 repo
-gitment_oauth:
-  client_id: ''           #client ID
-  client_secret: ''       #client secret
+#gitment_owner: AlitaIcon      #你的 GitHub ID
+#gitment_repo: 'alitaicon.github.io'          #存储评论的 repo
+#gitment_oauth:
+#  client_id: '5d338060345eb8cb45ea'           #client ID
+#  client_secret: '059c85a52ebe794cb93b1100482e4f0f53d11d43'       #client secret
 
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
