@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Alita
-subtitle: Alita的个人博客
+title: Alita的个人博客
+subtitle: 温故而知新，探索不止步
 description: Alita的个人博客
 keywords: Alita的个人博客
 author: Alita Icon
@@ -79,6 +79,9 @@ theme: yilia
 # touxiang
 avatar: /img/peggi.jpg
 favicon: /img/peggi.jpg
+
+# 来必力
+# livere_uid: MTAyMC80NDkyNi8yMTQ0OA==
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
