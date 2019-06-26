@@ -73,6 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
+## yilia_theme:https://github.com/litten/hexo-theme-yilia.git
 theme: yilia
 
 # touxiang
