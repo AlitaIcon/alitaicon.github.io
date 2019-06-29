@@ -4,14 +4,15 @@ date: 2019-06-29 14:18:02
 tags: [python]
 ---
 ## 1.wsgi面试题
-**1)什么是wsgi?**
+**1) 什么是wsgi?**
 - WSGI（Web Server Gateway Interface，Web服务器网关接口）则是Python语言中1所定义的Web服务器和Web应用程序之间或框架之间的通用接口标准。
 - WSGI就是一座桥梁，桥梁的一端称为服务端或网关端，另一端称为应用端或者框架端，WSGI的作用就是在协议之间进行转化。WSGI将Web组件分成了三类：Web 服务器（WSGI Server）、Web中间件（WSGI Middleware）与Web应用程序（WSGI Application）。
 - Web Server接收HTTP请求，封装一系列环境变量，按照WSGI接口标准调用注册的WSGI Application，最后将响应返回给客户端。
 <!-- more -->
 ![img](/img/python/flask/wsgi.png)
-**2)什么是Flask，有什么优点？**
+**2) 什么是Flask，有什么优点？**
 Flask是一个Web框架，就是提供一个工具，库和技术来允许你构建一个Web应用程序。这个Web应用程序可以是一些Web页面，博客，wiki，基于Web的日里应用或商业网站。
+
 **优点**
 Flask属于微框架（micro-framework)这一类别，微架构通常是很小的不依赖外部库的框架。 
 - 框架很轻量 
@@ -22,7 +23,7 @@ Flask属于微框架（micro-framework)这一类别，微架构通常是很小�
 - Werkzeug 一个WSGI工具包（web服务网关接口（Python Web Server Gateway Interface，缩写为WSGI）是为python语言定义的web服务器和web应用程序或框架之间的一种简单而通用的借口，其他语言也有类似的接口）
 - jinja2模板引擎
 
-**3).Django和Flask有什么区别？**
+**3) Django和Flask有什么区别？**
 **Flask**
 - 轻量级web框架，默认依赖两个外部库：jinja2和Werkzeug WSGI工具
 - 适用于做小型网站以及web服务的API，开发大型网站无压力，但架构需要自己设计
