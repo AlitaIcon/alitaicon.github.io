@@ -95,7 +95,7 @@ start_response('200 OK', [('Content-Type', 'text/html')])
 
 
 有了WSGI，我们关心的就是如何从environ这个dict对象拿到HTTP请求信息，然后构造HTML，通过start_response()发送Header，最后返回Body。
-
+- **实现一个简单的webserver代码**
 ```python
 from wsgiref.simple_server import make_server
 def app(env, start_response):
@@ -130,3 +130,60 @@ server = make_server('',6001,app)
 server.serve_forever()
 ```
 
+- **实现一个简单的webserver代码优化**
+```python
+from wsgiref.simple_server import make_server
+import json
+
+
+def index():
+    index_html = "<h1>欢迎来到首页</h1>"
+    return [index_html.encode()]
+
+
+def login():
+    login_html = "<h1>登录页</h1>"
+    return [login_html.encode()]
+
+
+def projects():
+    projects_html = "<h1>项目列表页</h1>"
+    return [projects_html.encode()]
+
+
+def not_found():
+    nf = {'msg': '404 not found'}
+    return [json.dumps(nf).encode()]
+
+
+def param(request):
+    return request
+
+
+patterns = {
+    '/': index,
+    '/login': login,
+    '/projects': projects,
+}
+
+
+def app(env, start_response):
+    url = env.get('PATH_INFO')
+    params = env.get('QUERY_STRING')
+    if url not in patterns:
+        start_response('404 not found', [('content-type', 'application/json'), ])
+        # res = not_found()
+        res = param(params)
+        return [res.encode()]
+    res = patterns.get(url)
+    if res is None:
+        start_response('404 not found', [('content-type', 'text/html'), ])
+        return [b'page not found']
+    start_response('200 ok', [('content-type', 'text/html; charset=utf-8'), ])
+    return res()
+
+
+server = make_server('', 6001, app)
+server.serve_forever()
+
+```
