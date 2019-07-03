@@ -1,7 +1,7 @@
 ---
 title: flask初识
 date: 2019-06-29 14:18:02
-tags: [python]
+tags: [flask]
 ---
 ## 1.wsgi面试题
 **1) 什么是wsgi?**

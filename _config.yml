@@ -112,8 +112,8 @@ jsonContent:
 
 menu:
   主页: /
-  python: /tags/python/
-
+  flask: /tags/flask/
+  python: /tags/python/  
 
 # SubNav
 subnav:
