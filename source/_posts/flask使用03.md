@@ -43,8 +43,8 @@ def get_case(id):
 **参数：**
 
 - endpoint：视图函数别名
-- redirect_to='/'：访问/cases/，直接重定向到/，不会运行试图函数内容
-- redirect('/')：重定向到/，会运行试图函数内容
+- redirect_to='/'：访问/cases/，直接重定向到/，不会运行视图函数内容
+- redirect('/')：重定向到/，会运行视图函数内容
 - defaults={'id':3}：设置默认参数，也可以在是视图函数中设置（id=3、id=None）
 
 
