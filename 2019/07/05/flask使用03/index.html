@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Alita的个人博客">
 <meta property="og:description" content="flask参数使用 唯一标识id  12import uuiduuid.uuid4()   动态路由  12345@app.route(&apos;/cases/&amp;lt;int:id&amp;gt;&apos;)  # float string path(可包含斜杠/)def get_case(id):    id = request.args.get(&apos;id&apos;)    return f&apos;&amp;#123;id&amp;#125;&apos;">
 <meta property="og:locale" content="ch-zh">
-<meta property="og:updated_time" content="2019-07-05T10:44:59.727Z">
+<meta property="og:updated_time" content="2019-07-05T10:48:12.035Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flask使用03">
 <meta name="twitter:description" content="flask参数使用 唯一标识id  12import uuiduuid.uuid4()   动态路由  12345@app.route(&apos;/cases/&amp;lt;int:id&amp;gt;&apos;)  # float string path(可包含斜杠/)def get_case(id):    id = request.args.get(&apos;id&apos;)    return f&apos;&amp;#123;id&amp;#125;&apos;">
@@ -194,6 +194,10 @@
 <li><strong>动态路由</strong></li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/cases/&lt;int:id&gt;')  # float string path(可包含斜杠/)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_case</span><span class="params">(id)</span>:</span></span><br><span class="line">    id = request.args.get(<span class="string">'id'</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f'<span class="subst">&#123;id&#125;</span>'</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f'<span class="subst">&#123;id&#125;</span>'</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+
 
 <ul>
 <li><strong>常用路由参数</strong></li>

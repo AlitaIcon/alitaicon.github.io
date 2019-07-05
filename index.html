@@ -195,33 +195,9 @@
 <li><strong>动态路由</strong></li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/cases/&lt;int:id&gt;')  # float string path(可包含斜杠/)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_case</span><span class="params">(id)</span>:</span></span><br><span class="line">    id = request.args.get(<span class="string">'id'</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f'<span class="subst">&#123;id&#125;</span>'</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f'<span class="subst">&#123;id&#125;</span>'</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>常用路由参数</strong></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/cases/', methods=['POST', 'GET'], endpoint='cases', redirect_to='/', defaults=&#123;'id':3&#125;)</span></span><br><span class="line"><span class="meta">@app.route('/cases/', methods=['POST', 'GET'], endpoint='cases', defaults=&#123;'id':3&#125;) #  endpoint视图函数别名</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_case</span><span class="params">(id)</span>:</span></span><br><span class="line">    print(id)</span><br><span class="line">    <span class="comment"># return redirect('/')</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'hello'</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>参数：</strong></p>
-<ul>
-<li>endpoint：视图函数别名</li>
-<li>redirect_to=’/‘：访问/cases/，直接重定向到/，不会运行试图函数内容</li>
-<li>redirect(‘/‘)：重定向到/，会运行试图函数内容</li>
-<li>defaults={‘id’:3}：设置默认参数，也可以在是视图函数中设置（id=3、id=None）</li>
-</ul>
-<h2 id="使用MVC思想"><a href="#使用MVC思想" class="headerlink" title="使用MVC思想"></a><strong>使用MVC思想</strong></h2><p>urls.py集中注册路由，views.py存放视图函数，app.py开启服务器</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># app.py</span></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request, redirect</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"><span class="keyword">from</span> test.flask03.urls <span class="keyword">import</span> *  <span class="comment"># 防止互相导入时产生问题，需要用时，只引用对方的代码，不运行引用导入代码</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># urls.py</span></span><br><span class="line"><span class="keyword">from</span> test.flask03.app <span class="keyword">import</span> app</span><br><span class="line"><span class="keyword">from</span> test.flask03 <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">app.add_url_rule(<span class="string">'/case'</span>, view_func=views.cases)</span><br><span class="line">app.add_url_rule(<span class="string">'/'</span>, view_func=views.index)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># views.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'index'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cases</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'cases'</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>作业：</strong></p>
-<p>请用装饰器注册 3 个路由 ：</p>
-<p>1、首页 /、列举所有测试项目 /projects、获取单个测试项目 /project 加id；</p>
-<p>2、路由单独放到 views.py 文件，主运行文件放到 app.py 文件；</p>
-<p>3、所有 url 不具备 ‘/‘ 的兼容性。</p>
-<p>参考：<br>作者示例文件，<a href="https://github.com/icon-python/python-study/tree/master/flask04" target="_blank" rel="noopener">点击查看</a></p>
-
+        
+          <a class="article-more-a" href="/2019/07/05/flask使用03/#more">more >></a>
+        
       
 
       
