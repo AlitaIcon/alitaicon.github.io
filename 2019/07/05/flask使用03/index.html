@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Alita的个人博客">
 <meta property="og:description" content="flask参数使用 唯一标识id  12import uuiduuid.uuid4()   动态路由  12345@app.route(&apos;/cases/&amp;lt;int:id&amp;gt;&apos;)  # float string path(可包含斜杠/)def get_case(id):    id = request.args.get(&apos;id&apos;)    return f&apos;&amp;#123;id&amp;#125;&apos;">
 <meta property="og:locale" content="ch-zh">
-<meta property="og:updated_time" content="2019-07-05T10:48:12.035Z">
+<meta property="og:updated_time" content="2019-07-05T11:26:41.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flask使用03">
 <meta name="twitter:description" content="flask参数使用 唯一标识id  12import uuiduuid.uuid4()   动态路由  12345@app.route(&apos;/cases/&amp;lt;int:id&amp;gt;&apos;)  # float string path(可包含斜杠/)def get_case(id):    id = request.args.get(&apos;id&apos;)    return f&apos;&amp;#123;id&amp;#125;&apos;">
@@ -207,8 +207,8 @@
 <p><strong>参数：</strong></p>
 <ul>
 <li>endpoint：视图函数别名</li>
-<li>redirect_to=’/‘：访问/cases/，直接重定向到/，不会运行试图函数内容</li>
-<li>redirect(‘/‘)：重定向到/，会运行试图函数内容</li>
+<li>redirect_to=’/‘：访问/cases/，直接重定向到/，不会运行视图函数内容</li>
+<li>redirect(‘/‘)：重定向到/，会运行视图函数内容</li>
 <li>defaults={‘id’:3}：设置默认参数，也可以在是视图函数中设置（id=3、id=None）</li>
 </ul>
 <h2 id="使用MVC思想"><a href="#使用MVC思想" class="headerlink" title="使用MVC思想"></a><strong>使用MVC思想</strong></h2><p>urls.py集中注册路由，views.py存放视图函数，app.py开启服务器</p>
