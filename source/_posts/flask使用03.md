@@ -92,3 +92,20 @@ def cases():
 
 参考：
 作者示例文件，[点击查看](<https://github.com/icon-python/python-study/tree/master/flask04>)
+```python
+# 一个视图函数完成访问所有请求
+@app.route('/project')
+def project():
+    p_id = request.args.get('id')
+    if not p_id:
+        return '所有项目'
+    else:
+        return f"项目{p_id}"
+
+# @app.route('/project/<id>')
+# def project(id):
+#     if id == 'all':
+#         return '所有项目'
+#     else:
+#         return f"项目{id}"
+```
