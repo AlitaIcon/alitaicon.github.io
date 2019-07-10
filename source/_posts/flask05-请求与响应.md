@@ -116,13 +116,11 @@ def index():
 **3.路由设计思路**
 
  前后端不分离，模板渲染：1）一个视图函数写一个url
-
 - \# url: 获取所有的项目： /projects.txt, def list_projects
 - \# url: 获取单个的项目内容： /project/<id>, def get_project() 模板
 - \# url: 修改某个项目的内容： /project_edit/<id>, def edit_project()
 
 前后端分离：rest method:get, post, delete,
-
 - \# /project/<id> 类的视图：def get:单个资源
 - \# /projects.txt
 - \# DRF
@@ -130,7 +128,6 @@ def index():
   file.read([size])从文件读取指定的字节数，如果未给定或为负则读取所有。
 
 ## **4.作业**
-
 1、返回所有项目数据，包含：项目id, 项目名称，项目简介，创建时间，修改时间
 2、根据id获取单个项目数据。
 3、修改单个项目数据。
