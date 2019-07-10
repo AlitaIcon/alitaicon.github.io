@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Alita的个人博客">
 <meta property="og:description" content="1.make_response 响应make_response()，相当于DJango中的HttpResponse。 1).返回内容 123456from flask import make_response@app.route(&apos;/makeresponse/&apos;)def make_response_function():    response = make_response(&apos;&amp;lt;h2&amp;gt">
 <meta property="og:locale" content="ch-zh">
-<meta property="og:updated_time" content="2019-07-10T09:55:33.988Z">
+<meta property="og:updated_time" content="2019-07-10T10:11:28.051Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flask05-请求与响应">
 <meta name="twitter:description" content="1.make_response 响应make_response()，相当于DJango中的HttpResponse。 1).返回内容 123456from flask import make_response@app.route(&apos;/makeresponse/&apos;)def make_response_function():    response = make_response(&apos;&amp;lt;h2&amp;gt">
@@ -207,8 +207,7 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/upload/&lt;filename&gt;')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_filename</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> send_from_directory(os.getcwd()+<span class="string">'/static/'</span>, filename)</span><br></pre></td></tr></table></figure>
 
-<p><strong>2.请求</strong></p>
-<ul>
+<h2 id="2-请求"><a href="#2-请求" class="headerlink" title="2.请求"></a><strong>2.请求</strong></h2><ul>
 <li>调试发送ajax请求：</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;p onclick=<span class="string">"upload()"</span>&gt;点击发送请求&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    function upload() &#123;</span></span><br><span class="line"><span class="regexp">        $.ajax(&#123;</span></span><br><span class="line"><span class="regexp">            type:"POST",</span></span><br><span class="line"><span class="regexp">            url:"http:/</span><span class="regexp">/127.0.0.1:5000",</span></span><br><span class="line"><span class="regexp">            data:JSON.stringify(&#123;"user":"admin"&#125;),</span></span><br><span class="line"><span class="regexp">            dataType:"json",</span></span><br><span class="line"><span class="regexp">            content_type:"application/</span>json<span class="string">",</span></span><br><span class="line"><span class="string">            success: function (data) &#123;</span></span><br><span class="line"><span class="string">                alert('success'+data)</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        &#125;)</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
@@ -218,20 +217,20 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 方法1：</span></span><br><span class="line">    <span class="comment"># return json.dumps(&#123;"username": "alita"&#125;), &#123;"content-type":"application/json"&#125;</span></span><br><span class="line">    <span class="comment"># 方法2： make_response() Response()</span></span><br><span class="line">    <span class="comment"># r = make_response(json.dumps(&#123;"username": "alita"&#125;), &#123;"content-type":"application/json"&#125;)</span></span><br><span class="line">    <span class="comment"># r.status = '203'</span></span><br><span class="line">    <span class="comment"># r.content_type = 'application/json'</span></span><br><span class="line">    <span class="comment"># 方法3： jsonify()</span></span><br><span class="line">    r = jsonify(&#123;<span class="string">"username"</span>: <span class="string">"阿丽塔"</span>&#125;)</span><br><span class="line">    <span class="comment"># 修改成 201</span></span><br><span class="line">    <span class="comment"># r.status = '201'</span></span><br><span class="line">    <span class="keyword">return</span> r, <span class="string">"202  ok"</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>3.路由设计思路</strong></p>
-<p> 前后端不分离，模板渲染：1）一个视图函数写一个url</p>
+<h2 id="3-路由设计思路"><a href="#3-路由设计思路" class="headerlink" title="3.路由设计思路"></a><strong>3.路由设计思路</strong></h2><p>前后端不分离，模板渲染：1）一个视图函数写一个url</p>
 <ul>
-<li># url: 获取所有的项目： /projects.txt, def list_projects</li>
-<li># url: 获取单个的项目内容： /project/<id>, def get_project() 模板</id></li>
-<li># url: 修改某个项目的内容： /project_edit/<id>, def edit_project()</id></li>
+<li>#url: 获取所有的项目： /projects.txt, def list_projects</li>
+<li>#url: 获取单个的项目内容： /project/<id>, def get_project() 模板</id></li>
+<li>#url: 修改某个项目的内容： /project_edit/<id>, def edit_project()</id></li>
 </ul>
 <p>前后端分离：rest method:get, post, delete,</p>
 <ul>
-<li># /project/<id> 类的视图：def get:单个资源</id></li>
-<li># /projects.txt</li>
+<li>#/project/<id> 类的视图：def get:单个资源</id></li>
+<li>#/projects.txt</li>
 <li># DRF</li>
-<li>熟悉<br>file.read([size])从文件读取指定的字节数，如果未给定或为负则读取所有。</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file.read([size])从文件读取指定的字节数，如果未给定或为负则读取所有。</span><br></pre></td></tr></table></figure>
+
 <h2 id="4-作业"><a href="#4-作业" class="headerlink" title="4.作业"></a><strong>4.作业</strong></h2><p>1、返回所有项目数据，包含：项目id, 项目名称，项目简介，创建时间，修改时间<br>2、根据id获取单个项目数据。<br>3、修改单个项目数据。<br>4、创建项目<br>5、删除项目</p>
 <p>注意： 客户端不管是浏览器还是手机，postman, 只要根据接口文档要求发送了对应的请求，就能操作对应接口的资源。</p>
 <p>参考：<br>作者示例文件，<a href="https://github.com/icon-python/python-study/tree/master/flask06/homework" target="_blank" rel="noopener">点击查看</a></p>
