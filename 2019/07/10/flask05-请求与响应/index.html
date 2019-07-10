@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>flask使用03 | Alita的个人博客</title>
+  <title>flask05-请求与响应 | Alita的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="flask参数使用 唯一标识id  12import uuiduuid.uuid4()   动态路由  12345@app.route(&apos;/cases/&amp;lt;int:id&amp;gt;&apos;)  # float string path(可包含斜杠/)def get_case(id):    id = request.args.get(&apos;id&apos;)    return f&apos;&amp;#123;id&amp;#125;&apos;">
+  <meta name="description" content="1.make_response 响应make_response()，相当于DJango中的HttpResponse。 1).返回内容 123456from flask import make_response@app.route(&apos;/makeresponse/&apos;)def make_response_function():    response = make_response(&apos;&amp;lt;h2&amp;gt">
 <meta name="keywords" content="flask">
 <meta property="og:type" content="article">
-<meta property="og:title" content="flask使用03">
-<meta property="og:url" content="http://yoursite.com/2019/07/05/flask使用03/index.html">
+<meta property="og:title" content="flask05-请求与响应">
+<meta property="og:url" content="http://yoursite.com/2019/07/10/flask05-请求与响应/index.html">
 <meta property="og:site_name" content="Alita的个人博客">
-<meta property="og:description" content="flask参数使用 唯一标识id  12import uuiduuid.uuid4()   动态路由  12345@app.route(&apos;/cases/&amp;lt;int:id&amp;gt;&apos;)  # float string path(可包含斜杠/)def get_case(id):    id = request.args.get(&apos;id&apos;)    return f&apos;&amp;#123;id&amp;#125;&apos;">
+<meta property="og:description" content="1.make_response 响应make_response()，相当于DJango中的HttpResponse。 1).返回内容 123456from flask import make_response@app.route(&apos;/makeresponse/&apos;)def make_response_function():    response = make_response(&apos;&amp;lt;h2&amp;gt">
 <meta property="og:locale" content="ch-zh">
-<meta property="og:updated_time" content="2019-07-08T00:34:35.431Z">
+<meta property="og:updated_time" content="2019-07-10T09:51:35.424Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="flask使用03">
-<meta name="twitter:description" content="flask参数使用 唯一标识id  12import uuiduuid.uuid4()   动态路由  12345@app.route(&apos;/cases/&amp;lt;int:id&amp;gt;&apos;)  # float string path(可包含斜杠/)def get_case(id):    id = request.args.get(&apos;id&apos;)    return f&apos;&amp;#123;id&amp;#125;&apos;">
+<meta name="twitter:title" content="flask05-请求与响应">
+<meta name="twitter:description" content="1.make_response 响应make_response()，相当于DJango中的HttpResponse。 1).返回内容 123456from flask import make_response@app.route(&apos;/makeresponse/&apos;)def make_response_function():    response = make_response(&apos;&amp;lt;h2&amp;gt">
   
     <link rel="alternative" href="/atom.xml" title="Alita的个人博客" type="application/atom+xml">
   
@@ -165,66 +165,78 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-flask使用03" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-flask05-请求与响应" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      flask使用03
+      flask05-请求与响应
     </h1>
   
 
         
-        <a href="/2019/07/05/flask使用03/" class="archive-article-date">
-  	<time datetime="2019-07-05T10:36:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
+        <a href="/2019/07/10/flask05-请求与响应/" class="archive-article-date">
+  	<time datetime="2019-07-10T09:30:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="flask参数使用"><a href="#flask参数使用" class="headerlink" title="flask参数使用"></a><strong>flask参数使用</strong></h2><ul>
-<li><strong>唯一标识id</strong></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> uuid</span><br><span class="line">uuid.uuid4()</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>动态路由</strong></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/cases/&lt;int:id&gt;')  # float string path(可包含斜杠/)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_case</span><span class="params">(id)</span>:</span></span><br><span class="line">    id = request.args.get(<span class="string">'id'</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f'<span class="subst">&#123;id&#125;</span>'</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f'<span class="subst">&#123;id&#125;</span>'</span></span><br></pre></td></tr></table></figure>
+        <h2 id="1-make-response-响应"><a href="#1-make-response-响应" class="headerlink" title="1.make_response 响应"></a><strong>1.make_response 响应</strong></h2><p>make_response()，相当于DJango中的HttpResponse。</p>
+<p><strong>1).返回内容</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> make_response</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/makeresponse/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_response_function</span><span class="params">()</span>:</span></span><br><span class="line">    response = make_response(<span class="string">'&lt;h2&gt;羞羞哒&lt;/h2&gt;'</span>)</span><br><span class="line">    <span class="keyword">return</span> response, <span class="number">404</span></span><br></pre></td></tr></table></figure>
 
 <a id="more"></a>
 
+<p><strong>2).返回页面</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> make_response</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/makeresponse/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_response_function</span><span class="params">()</span>:</span></span><br><span class="line">    temp = render_template(<span class="string">'hello.html'</span>)</span><br><span class="line">    response = make_response(temp)</span><br><span class="line">    <span class="keyword">return</span> response</span><br></pre></td></tr></table></figure>
 
+<p>&gt;&gt;&gt;注意：make_response 想要返回页面，不能直接写做：make_response(‘hello.html’)，必须用render_template(‘hello.html’)形式。</p>
+<p><strong>3).返回状态码</strong></p>
+<p>&gt;&gt;&gt;方式一：在make_response()中传入状态码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> make_response</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/makeresponse/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_response_function</span><span class="params">()</span>:</span></span><br><span class="line">    temp = render_template(<span class="string">'hello.html'</span>)</span><br><span class="line">    response = make_response(temp, <span class="number">200</span>)</span><br><span class="line">    <span class="keyword">return</span> response</span><br></pre></td></tr></table></figure>
+
+<p>&gt;&gt;&gt;方式二：直接return状态码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> make_response</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/makeresponse/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_response_function</span><span class="params">()</span>:</span></span><br><span class="line">    temp = render_template(<span class="string">'hello.html'</span>)</span><br><span class="line">    response = make_response(temp)</span><br><span class="line">    <span class="keyword">return</span> response, <span class="number">200</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><strong>常用路由参数</strong></li>
+<li>将上传文件变成可访问资源：</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/cases/', methods=['POST', 'GET'], endpoint='cases', redirect_to='/', defaults=&#123;'id':3&#125;)</span></span><br><span class="line"><span class="meta">@app.route('/cases/', methods=['POST', 'GET'], endpoint='cases', defaults=&#123;'id':3&#125;) #  endpoint视图函数别名</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_case</span><span class="params">(id)</span>:</span></span><br><span class="line">    print(id)</span><br><span class="line">    <span class="comment"># return redirect('/')</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'hello'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/upload/&lt;filename&gt;')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_filename</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> send_from_directory(os.getcwd()+<span class="string">'/static/'</span>, filename)</span><br></pre></td></tr></table></figure>
 
-<p><strong>参数：</strong></p>
+<p><strong>2.请求</strong></p>
 <ul>
-<li>endpoint：视图函数别名</li>
-<li>redirect_to=’/‘：访问/cases/，直接重定向到/，不会运行视图函数内容</li>
-<li>redirect(‘/‘)：重定向到/，会运行视图函数内容</li>
-<li>defaults={‘id’:3}：设置默认参数，也可以在是视图函数中设置（id=3、id=None）</li>
+<li>调试发送ajax请求：</li>
 </ul>
-<h2 id="使用MVC思想"><a href="#使用MVC思想" class="headerlink" title="使用MVC思想"></a><strong>使用MVC思想</strong></h2><p>urls.py集中注册路由，views.py存放视图函数，app.py开启服务器</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># app.py</span></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request, redirect</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"><span class="keyword">from</span> test.flask03.urls <span class="keyword">import</span> *  <span class="comment"># 防止互相导入时产生问题，需要用时，只引用对方的代码，不运行引用导入代码</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;p onclick=<span class="string">"upload()"</span>&gt;点击发送请求&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    function upload() &#123;</span></span><br><span class="line"><span class="regexp">        $.ajax(&#123;</span></span><br><span class="line"><span class="regexp">            type:"POST",</span></span><br><span class="line"><span class="regexp">            url:"http:/</span><span class="regexp">/127.0.0.1:5000",</span></span><br><span class="line"><span class="regexp">            data:JSON.stringify(&#123;"user":"admin"&#125;),</span></span><br><span class="line"><span class="regexp">            dataType:"json",</span></span><br><span class="line"><span class="regexp">            content_type:"application/</span>json<span class="string">",</span></span><br><span class="line"><span class="string">            success: function (data) &#123;</span></span><br><span class="line"><span class="string">                alert('success'+data)</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        &#125;)</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># urls.py</span></span><br><span class="line"><span class="keyword">from</span> test.flask03.app <span class="keyword">import</span> app</span><br><span class="line"><span class="keyword">from</span> test.flask03 <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">app.add_url_rule(<span class="string">'/case'</span>, view_func=views.cases)</span><br><span class="line">app.add_url_rule(<span class="string">'/'</span>, view_func=views.index)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>构造响应头：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 方法1：</span></span><br><span class="line">    <span class="comment"># return json.dumps(&#123;"username": "alita"&#125;), &#123;"content-type":"application/json"&#125;</span></span><br><span class="line">    <span class="comment"># 方法2： make_response() Response()</span></span><br><span class="line">    <span class="comment"># r = make_response(json.dumps(&#123;"username": "alita"&#125;), &#123;"content-type":"application/json"&#125;)</span></span><br><span class="line">    <span class="comment"># r.status = '203'</span></span><br><span class="line">    <span class="comment"># r.content_type = 'application/json'</span></span><br><span class="line">    <span class="comment"># 方法3： jsonify()</span></span><br><span class="line">    r = jsonify(&#123;<span class="string">"username"</span>: <span class="string">"阿丽塔"</span>&#125;)</span><br><span class="line">    <span class="comment"># 修改成 201</span></span><br><span class="line">    <span class="comment"># r.status = '201'</span></span><br><span class="line">    <span class="keyword">return</span> r, <span class="string">"202  ok"</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># views.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'index'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cases</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'cases'</span></span><br></pre></td></tr></table></figure>
+<p><strong>3.路由设计思路</strong></p>
+<p> 前后端不分离，模板渲染：1）一个视图函数写一个url</p>
+<ul>
+<li># url: 获取所有的项目： /projects.txt, def list_projects</li>
+<li># url: 获取单个的项目内容： /project/<id>, def get_project() 模板</id></li>
+<li># url: 修改某个项目的内容： /project_edit/<id>, def edit_project()</id></li>
+</ul>
+<p>前后端分离：rest method:get, post, delete,</p>
+<ul>
+<li># /project/<id> 类的视图：def get:单个资源</id></li>
+<li># /projects.txt</li>
+<li># DRF</li>
+<li>熟悉<br>file.read([size])从文件读取指定的字节数，如果未给定或为负则读取所有。</li>
+</ul>
+<h2 id="4-作业"><a href="#4-作业" class="headerlink" title="4.作业"></a><strong>4.作业</strong></h2><p>1、返回所有项目数据，包含：项目id, 项目名称，项目简介，创建时间，修改时间</p>
+<p>2、根据id获取单个项目数据。<br>3、修改单个项目数据。<br>4、创建项目<br>5、删除项目</p>
+<p>注意： 客户端不管是浏览器还是手机，postman, 只要根据接口文档要求发送了对应的请求，就能操作对应接口的资源。</p>
+<p>参考：<br>作者示例文件，<a href="https://github.com/icon-python/python-study/tree/master/flask06/homework" target="_blank" rel="noopener">点击查看</a></p>
 
-<p><strong>作业：</strong></p>
-<p>请用装饰器注册 3 个路由 ：</p>
-<p>1、首页 /、列举所有测试项目 /projects、获取单个测试项目 /project 加id；</p>
-<p>2、路由单独放到 views.py 文件，主运行文件放到 app.py 文件；</p>
-<p>3、所有 url 不具备 ‘/‘ 的兼容性。</p>
-<p>参考：<br>作者示例文件，<a href="https://github.com/icon-python/python-study/tree/master/flask04" target="_blank" rel="noopener">点击查看</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一个视图函数完成访问所有请求</span></span><br><span class="line"><span class="meta">@app.route('/project')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">project</span><span class="params">()</span>:</span></span><br><span class="line">    p_id = request.args.get(<span class="string">'id'</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> p_id:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'所有项目'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f"项目<span class="subst">&#123;p_id&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># @app.route('/project/&lt;id&gt;')</span></span><br><span class="line"><span class="comment"># def project(id):</span></span><br><span class="line"><span class="comment">#     if id == 'all':</span></span><br><span class="line"><span class="comment">#         return '所有项目'</span></span><br><span class="line"><span class="comment">#     else:</span></span><br><span class="line"><span class="comment">#         return f"项目&#123;id&#125;"</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -319,7 +331,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/05/flask使用03/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/10/flask05-请求与响应/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -333,18 +345,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/06/flask使用04-可插拔视图函数View/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          flask使用04--可插拔视图函数View
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/03/flask初识02/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">flask初识02</div>
+    <a href="/2019/07/06/flask使用04-可插拔视图函数View/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flask使用04--可插拔视图函数View</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>flask使用03 | Alita的个人博客</title>
+  <title>flask使用04--可插拔视图函数View | Alita的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="flask参数使用 唯一标识id  12import uuiduuid.uuid4()   动态路由  12345@app.route(&apos;/cases/&amp;lt;int:id&amp;gt;&apos;)  # float string path(可包含斜杠/)def get_case(id):    id = request.args.get(&apos;id&apos;)    return f&apos;&amp;#123;id&amp;#125;&apos;">
+  <meta name="description" content="flask可插拔视图函数View Class-View">
 <meta name="keywords" content="flask">
 <meta property="og:type" content="article">
-<meta property="og:title" content="flask使用03">
-<meta property="og:url" content="http://yoursite.com/2019/07/05/flask使用03/index.html">
+<meta property="og:title" content="flask使用04--可插拔视图函数View">
+<meta property="og:url" content="http://yoursite.com/2019/07/06/flask使用04-可插拔视图函数View/index.html">
 <meta property="og:site_name" content="Alita的个人博客">
-<meta property="og:description" content="flask参数使用 唯一标识id  12import uuiduuid.uuid4()   动态路由  12345@app.route(&apos;/cases/&amp;lt;int:id&amp;gt;&apos;)  # float string path(可包含斜杠/)def get_case(id):    id = request.args.get(&apos;id&apos;)    return f&apos;&amp;#123;id&amp;#125;&apos;">
+<meta property="og:description" content="flask可插拔视图函数View Class-View">
 <meta property="og:locale" content="ch-zh">
+<meta property="og:image" content="http://yoursite.com/img/python/flask/flask-request.png">
 <meta property="og:updated_time" content="2019-07-08T00:34:35.431Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="flask使用03">
-<meta name="twitter:description" content="flask参数使用 唯一标识id  12import uuiduuid.uuid4()   动态路由  12345@app.route(&apos;/cases/&amp;lt;int:id&amp;gt;&apos;)  # float string path(可包含斜杠/)def get_case(id):    id = request.args.get(&apos;id&apos;)    return f&apos;&amp;#123;id&amp;#125;&apos;">
+<meta name="twitter:title" content="flask使用04--可插拔视图函数View">
+<meta name="twitter:description" content="flask可插拔视图函数View Class-View">
+<meta name="twitter:image" content="http://yoursite.com/img/python/flask/flask-request.png">
   
     <link rel="alternative" href="/atom.xml" title="Alita的个人博客" type="application/atom+xml">
   
@@ -165,66 +167,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-flask使用03" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-flask使用04-可插拔视图函数View" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      flask使用03
+      flask使用04--可插拔视图函数View
     </h1>
   
 
         
-        <a href="/2019/07/05/flask使用03/" class="archive-article-date">
-  	<time datetime="2019-07-05T10:36:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
+        <a href="/2019/07/06/flask使用04-可插拔视图函数View/" class="archive-article-date">
+  	<time datetime="2019-07-06T07:40:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="flask参数使用"><a href="#flask参数使用" class="headerlink" title="flask参数使用"></a><strong>flask参数使用</strong></h2><ul>
-<li><strong>唯一标识id</strong></li>
+        <h2 id="flask可插拔视图函数View"><a href="#flask可插拔视图函数View" class="headerlink" title="flask可插拔视图函数View"></a><strong>flask可插拔视图函数View</strong></h2><ul>
+<li><strong>Class-View</strong></li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> uuid</span><br><span class="line">uuid.uuid4()</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>动态路由</strong></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/cases/&lt;int:id&gt;')  # float string path(可包含斜杠/)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_case</span><span class="params">(id)</span>:</span></span><br><span class="line">    id = request.args.get(<span class="string">'id'</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f'<span class="subst">&#123;id&#125;</span>'</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f'<span class="subst">&#123;id&#125;</span>'</span></span><br></pre></td></tr></table></figure>
-
 <a id="more"></a>
 
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request</span><br><span class="line"><span class="keyword">from</span> flask.views <span class="keyword">import</span> View</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log_time</span><span class="params">(f)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">decorator</span><span class="params">(*args, **kw)</span>:</span></span><br><span class="line">        st = time.time()</span><br><span class="line">        res = f(*args, **kw)</span><br><span class="line">        print(<span class="string">f'<span class="subst">&#123;time.time() - st&#125;</span>'</span>)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">return</span> decorator</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProjectView</span><span class="params">(View)</span>:</span></span><br><span class="line">    methods = [<span class="string">"GET"</span>, <span class="string">"POST"</span>]</span><br><span class="line">    decorators = [log_time, ]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'get'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">post</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'post'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dispatch_request</span><span class="params">(self)</span>:</span>  <span class="comment"># 分配请求</span></span><br><span class="line">        dispatch_pattern = &#123;<span class="string">'GET'</span>: self.get, <span class="string">'POST'</span>: self.post&#125;</span><br><span class="line">        <span class="keyword">return</span> dispatch_pattern.get(request.method)()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f = ProjectView.as_view(<span class="string">'project'</span>)</span><br><span class="line">app.add_url_rule(<span class="string">'/project'</span>, view_func=f)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><strong>常用路由参数</strong></li>
+<li><p><strong>method-View</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"><span class="keyword">from</span> flask.views <span class="keyword">import</span> MethodView</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log_time</span><span class="params">(f)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">decorator</span><span class="params">(*args, **kw)</span>:</span></span><br><span class="line">        st = time.time()</span><br><span class="line">        res = f(*args, **kw)</span><br><span class="line">        print(<span class="string">f'<span class="subst">&#123;time.time() - st&#125;</span>'</span>)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">return</span> decorator</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyMethodView</span><span class="params">(MethodView)</span>:</span></span><br><span class="line">    methods = [<span class="string">"GET"</span>, <span class="string">"POST"</span>]</span><br><span class="line">    decorators = [log_time,]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'get'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">post</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'post'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f = MyMethodView.as_view(<span class="string">'user'</span>)</span><br><span class="line">app.add_url_rule(<span class="string">'/project'</span>, view_func=f, methods=[<span class="string">"GET"</span>, <span class="string">"POST"</span>, <span class="string">"PUT"</span>, <span class="string">"DELETE"</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>flask常见处理请求参数</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/', methods=['GET', 'POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    a = request</span><br><span class="line">    <span class="comment"># 默认get 请求 # request, 请求相关，flask,app, wsgi: 环境变量</span></span><br><span class="line">    get_data = request.args</span><br><span class="line">    form_data = request.form  <span class="comment"># 表单</span></span><br><span class="line">    json_data = request.json  <span class="comment"># json # header &#123;appliction/json&#125;</span></span><br><span class="line">    file_data = request.files  <span class="comment"># file</span></span><br><span class="line">    <span class="comment"># AJAX, json, 请求投，XHR:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'index'</span></span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/cases/', methods=['POST', 'GET'], endpoint='cases', redirect_to='/', defaults=&#123;'id':3&#125;)</span></span><br><span class="line"><span class="meta">@app.route('/cases/', methods=['POST', 'GET'], endpoint='cases', defaults=&#123;'id':3&#125;) #  endpoint视图函数别名</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_case</span><span class="params">(id)</span>:</span></span><br><span class="line">    print(id)</span><br><span class="line">    <span class="comment"># return redirect('/')</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'hello'</span></span><br></pre></td></tr></table></figure>
+<p><strong>1.通过requests发送请求</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">res = requests.request(method=<span class="string">'post'</span>, url=<span class="string">'http://127.0.0.1:5000/'</span>, json=&#123;<span class="string">'username'</span>:<span class="string">'admin'</span>&#125;)</span><br></pre></td></tr></table></figure>
 
-<p><strong>参数：</strong></p>
-<ul>
-<li>endpoint：视图函数别名</li>
-<li>redirect_to=’/‘：访问/cases/，直接重定向到/，不会运行视图函数内容</li>
-<li>redirect(‘/‘)：重定向到/，会运行视图函数内容</li>
-<li>defaults={‘id’:3}：设置默认参数，也可以在是视图函数中设置（id=3、id=None）</li>
-</ul>
-<h2 id="使用MVC思想"><a href="#使用MVC思想" class="headerlink" title="使用MVC思想"></a><strong>使用MVC思想</strong></h2><p>urls.py集中注册路由，views.py存放视图函数，app.py开启服务器</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># app.py</span></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request, redirect</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"><span class="keyword">from</span> test.flask03.urls <span class="keyword">import</span> *  <span class="comment"># 防止互相导入时产生问题，需要用时，只引用对方的代码，不运行引用导入代码</span></span><br></pre></td></tr></table></figure>
+<p><strong>2.通过打断点查看请求参数</strong><br><img src="/img/python/flask/flask-request.png" alt="img"></p>
+<p>参考：<br>查看源代码，<a href="https://github.com/icon-python/python-study/tree/master/flask05" target="_blank" rel="noopener">点击查看</a></p>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># urls.py</span></span><br><span class="line"><span class="keyword">from</span> test.flask03.app <span class="keyword">import</span> app</span><br><span class="line"><span class="keyword">from</span> test.flask03 <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">app.add_url_rule(<span class="string">'/case'</span>, view_func=views.cases)</span><br><span class="line">app.add_url_rule(<span class="string">'/'</span>, view_func=views.index)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># views.py</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'index'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cases</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'cases'</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>作业：</strong></p>
-<p>请用装饰器注册 3 个路由 ：</p>
-<p>1、首页 /、列举所有测试项目 /projects、获取单个测试项目 /project 加id；</p>
-<p>2、路由单独放到 views.py 文件，主运行文件放到 app.py 文件；</p>
-<p>3、所有 url 不具备 ‘/‘ 的兼容性。</p>
-<p>参考：<br>作者示例文件，<a href="https://github.com/icon-python/python-study/tree/master/flask04" target="_blank" rel="noopener">点击查看</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一个视图函数完成访问所有请求</span></span><br><span class="line"><span class="meta">@app.route('/project')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">project</span><span class="params">()</span>:</span></span><br><span class="line">    p_id = request.args.get(<span class="string">'id'</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> p_id:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'所有项目'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f"项目<span class="subst">&#123;p_id&#125;</span>"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># @app.route('/project/&lt;id&gt;')</span></span><br><span class="line"><span class="comment"># def project(id):</span></span><br><span class="line"><span class="comment">#     if id == 'all':</span></span><br><span class="line"><span class="comment">#         return '所有项目'</span></span><br><span class="line"><span class="comment">#     else:</span></span><br><span class="line"><span class="comment">#         return f"项目&#123;id&#125;"</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -319,7 +303,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/05/flask使用03/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/06/flask使用04-可插拔视图函数View/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -333,18 +317,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/06/flask使用04-可插拔视图函数View/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/10/flask05-请求与响应/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          flask使用04--可插拔视图函数View
+          flask05-请求与响应
         
       </div>
     </a>
   
   
-    <a href="/2019/07/03/flask初识02/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">flask初识02</div>
+    <a href="/2019/07/05/flask使用03/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flask使用03</div>
       <i class="icon-circle-right"></i>
     </a>
   
