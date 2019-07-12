@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="Alita的个人博客">
 <meta property="og:description" content="1.make_response 响应make_response()，相当于DJango中的HttpResponse。 1).返回内容 123456from flask import make_response@app.route(&apos;/makeresponse/&apos;)def make_response_function():    response = make_response(&apos;&amp;lt;h2&amp;gt">
 <meta property="og:locale" content="ch-zh">
-<meta property="og:image" content="http://yoursite.com/python/flask/http_res_code.png">
-<meta property="og:updated_time" content="2019-07-12T08:32:35.848Z">
+<meta property="og:image" content="http://yoursite.com/img/python/flask/http_res_code.png">
+<meta property="og:updated_time" content="2019-07-12T08:37:29.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flask05-请求与响应">
 <meta name="twitter:description" content="1.make_response 响应make_response()，相当于DJango中的HttpResponse。 1).返回内容 123456from flask import make_response@app.route(&apos;/makeresponse/&apos;)def make_response_function():    response = make_response(&apos;&amp;lt;h2&amp;gt">
-<meta name="twitter:image" content="http://yoursite.com/python/flask/http_res_code.png">
+<meta name="twitter:image" content="http://yoursite.com/img/python/flask/http_res_code.png">
   
     <link rel="alternative" href="/atom.xml" title="Alita的个人博客" type="application/atom+xml">
   
@@ -198,7 +198,7 @@
 
 <p>&gt;&gt;&gt;注意：make_response 想要返回页面，不能直接写做：make_response(‘hello.html’)，必须用render_template(‘hello.html’)形式。</p>
 <p><strong>3).返回状态码</strong></p>
-<p><img src="/python/flask/http_res_code.png" alt="img"></p>
+<p><img src="/img/python/flask/http_res_code.png" alt="img"></p>
 <p>&gt;&gt;&gt;方式一：在make_response()中传入状态码</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> make_response</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/makeresponse/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_response_function</span><span class="params">()</span>:</span></span><br><span class="line">    temp = render_template(<span class="string">'hello.html'</span>)</span><br><span class="line">    response = make_response(temp, <span class="number">200</span>)</span><br><span class="line">    <span class="keyword">return</span> response</span><br></pre></td></tr></table></figure>
 
