@@ -35,9 +35,9 @@ def make_response_function():
 
 \>>>注意：make_response 想要返回页面，不能直接写做：make_response('hello.html')，必须用render_template('hello.html')形式。
 
-**3).返回状态码**
+**3).返回状态码** 
 
-
+ 
 
 ![img](/img/python/flask/http_res_code.png)
 
