@@ -149,7 +149,7 @@ html文件：
 
 - [flash()用法](https://zhuanlan.zhihu.com/p/23374605)
 - [Flask的app的secret_key的含义和作用](https://www.crifan.com/flask_app_secret_key_meaning_and_usage/)
-- [flaks_upload](<https://pythonhosted.org/Flask-Uploads/>)
+- [flask_upload](<https://pythonhosted.org/Flask-Uploads/>)
 
 
 
