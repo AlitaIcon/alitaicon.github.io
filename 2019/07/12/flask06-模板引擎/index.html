@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Alita的个人博客</title>
+  <title>flask06-模板引擎 | Alita的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Alita的个人博客">
-<meta name="keywords" content="Alita的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Alita的个人博客">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="全局错误处理1.注册  通过使用 errorhandler() 装饰函数来注册或者稍后使用 register_error_handler() 来注册。 记得当返回响应的时候设置出错代码:  123456@app.errorhandler(werkzeug.exceptions.BadRequest)def handle_bad_request(e):    return &apos;bad request!">
+<meta name="keywords" content="flask">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flask06-模板引擎">
+<meta property="og:url" content="http://yoursite.com/2019/07/12/flask06-模板引擎/index.html">
 <meta property="og:site_name" content="Alita的个人博客">
-<meta property="og:description" content="Alita的个人博客">
+<meta property="og:description" content="全局错误处理1.注册  通过使用 errorhandler() 装饰函数来注册或者稍后使用 register_error_handler() 来注册。 记得当返回响应的时候设置出错代码:  123456@app.errorhandler(werkzeug.exceptions.BadRequest)def handle_bad_request(e):    return &apos;bad request!">
 <meta property="og:locale" content="ch-zh">
+<meta property="og:image" content="http://yoursite.com/img/python/flask/flask07.png">
+<meta property="og:updated_time" content="2019-07-12T02:48:57.332Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Alita的个人博客">
-<meta name="twitter:description" content="Alita的个人博客">
+<meta name="twitter:title" content="flask06-模板引擎">
+<meta name="twitter:description" content="全局错误处理1.注册  通过使用 errorhandler() 装饰函数来注册或者稍后使用 register_error_handler() 来注册。 记得当返回响应的时候设置出错代码:  123456@app.errorhandler(werkzeug.exceptions.BadRequest)def handle_bad_request(e):    return &apos;bad request!">
+<meta name="twitter:image" content="http://yoursite.com/img/python/flask/flask07.png">
   
     <link rel="alternative" href="/atom.xml" title="Alita的个人博客" type="application/atom+xml">
   
@@ -164,36 +167,141 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-flask06-模板引擎" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      flask06-模板引擎
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/12/flask06-模板引擎/" class="archive-article-date">
+
+        
+        <a href="/2019/07/12/flask06-模板引擎/" class="archive-article-date">
   	<time datetime="2019-07-12T02:21:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/12/flask06-模板引擎/">flask06-模板引擎</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="全局错误处理"><a href="#全局错误处理" class="headerlink" title="全局错误处理"></a><strong>全局错误处理</strong></h2><p><strong>1.注册</strong></p>
+<ul>
+<li>通过使用 errorhandler() 装饰函数来注册或者稍后使用 register_error_handler() 来注册。 记得当返回响应的时候设置出错代码:</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.errorhandler(werkzeug.exceptions.BadRequest)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">handle_bad_request</span><span class="params">(e)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'bad request!'</span>, <span class="number">400</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># or, without the decorator</span></span><br><span class="line">app.register_error_handler(<span class="number">400</span>, handle_bad_request)</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
+<ul>
+<li>当注册时， werkzeug.exceptions.HTTPException 的子类，如 BadRequest ，和它们的 HTTP 代码是可替换的。 （ BadRequest.code == 400 ）</li>
+</ul>
+<a id="more"></a>
+
+<p>因为 Werkzeug 无法识别非标准 HTTP 代码，因此它们不能被注册。替代地，使用适 当的代码定义一个 HTTPException 子类，注册并 抛出异常类:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InsufficientStorage</span><span class="params">(werkzeug.exceptions.HTTPException)</span>:</span></span><br><span class="line">    code = <span class="number">507</span></span><br><span class="line">    description = <span class="string">'Not enough storage space.'</span></span><br><span class="line"></span><br><span class="line">app.register_error_handler(InsuffcientStorage, handle_507)</span><br><span class="line"></span><br><span class="line"><span class="keyword">raise</span> InsufficientStorage()</span><br></pre></td></tr></table></figure>
+
+<p>出错处理器可被用于任何异常类的注册，除了 <a href="http://werkzeug.pocoo.org/docs/exceptions/#werkzeug.exceptions.HTTPException" target="_blank" rel="noopener"><strong>HTTPException</strong></a> 子类或者 HTTP 状态码。 出错处理器可被用于特定类的注册，也可用于一个父类的所有子类的注册。</p>
+<p><strong>2.处理</strong></p>
+<p>在处理请求时，当 Flask 捕捉到一个异常时，它首先根据代码检索。如果该代码没 有注册处理器，它会根据类的继承来查找，确定最合适的注册处理器。如果找不到已 注册的处理器，那么 <a href="http://werkzeug.pocoo.org/docs/exceptions/#werkzeug.exceptions.HTTPException" target="_blank" rel="noopener"><strong>HTTPException</strong></a> 子类会显示 一个关于代码的通用消息。没有代码的异常会被转化为一个通用的 500 内部服务器 错误。</p>
+<p>例如，如果一个 <a href="https://docs.python.org/3/library/exceptions.html#ConnectionRefusedError" target="_blank" rel="noopener"><strong>ConnectionRefusedError</strong></a> 的实例被抛出，并且一个出错处 理器注册到 <a href="https://docs.python.org/3/library/exceptions.html#ConnectionError" target="_blank" rel="noopener"><strong>ConnectionError</strong></a> 和 <a href="https://docs.python.org/3/library/exceptions.html#ConnectionRefusedError" target="_blank" rel="noopener"><strong>ConnectionRefusedError</strong></a> ，那么 会使用更合适的 <a href="https://docs.python.org/3/library/exceptions.html#ConnectionRefusedError" target="_blank" rel="noopener"><strong>ConnectionRefusedError</strong></a> 来处理异常实例，生成响应。</p>
+<p>当一个蓝图在处理抛出异常的请求时，在蓝图中注册的出错处理器优先于在应用中全 局注册的出错处理器。但是，蓝图无法处理 404 路由错误，因为 404 发生的路由级 别还不能检测到蓝图。</p>
+<p><strong>3.实例</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UserError</span><span class="params">(Exception)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># URL 和 视图函数： 绑定关系==》 endpoint 端点</span></span><br><span class="line"><span class="comment"># 全局错误处理</span></span><br><span class="line"><span class="comment"># @app.errorhandler(UserError)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">server_error_500</span><span class="params">(error)</span>:</span></span><br><span class="line">    <span class="comment"># print(error, type(error))  # error:&lt;class '__main__.UserError'&gt;</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'error_500.html'</span>), <span class="number">500</span></span><br><span class="line">    <span class="comment"># return 'bad request!', 500</span></span><br><span class="line"><span class="comment"># 采用集中注册</span></span><br><span class="line">app.register_error_handler(<span class="number">500</span>, server_error_500)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.errorhandler(401)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">server_error</span><span class="params">(error)</span>:</span></span><br><span class="line">    <span class="comment"># return render_template('error_401.html')</span></span><br><span class="line">    <span class="keyword">return</span> jsonify(&#123;<span class="string">"msg"</span>: error.__dict__&#125;), <span class="number">401</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> request.args.get(<span class="string">'username'</span>):</span><br><span class="line">        <span class="comment"># return redirect('/login')</span></span><br><span class="line">        abort(<span class="number">500</span>)</span><br><span class="line">        <span class="comment"># abort(401)</span></span><br><span class="line">        <span class="comment"># raise UserError("user error")  # 自定义错误类型</span></span><br><span class="line">    <span class="keyword">return</span> redirect(url_for(<span class="string">'log'</span>))</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a><strong>模板引擎</strong></h2><ul>
+<li><strong>循环变量</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>变量</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>loop.index</em></td>
+<td>当前循环迭代的次数（从 1 开始）</td>
+</tr>
+<tr>
+<td><em>loop.index0</em></td>
+<td>当前循环迭代的次数（从 0 开始）</td>
+</tr>
+<tr>
+<td><em>loop.revindex</em></td>
+<td>到循环结束需要迭代的次数（从 1 开始）</td>
+</tr>
+<tr>
+<td><em>loop.revindex0</em></td>
+<td>到循环结束需要迭代的次数（从 0 开始）</td>
+</tr>
+<tr>
+<td><em>loop.first</em></td>
+<td>如果是第一次迭代，为 True 。</td>
+</tr>
+<tr>
+<td><em>loop.last</em></td>
+<td>如果是最后一次迭代，为 True 。</td>
+</tr>
+<tr>
+<td><em>loop.length</em></td>
+<td>序列中的项目数。</td>
+</tr>
+<tr>
+<td><em>loop.cycle</em></td>
+<td>在一串序列间期取值的辅助函数。见下面的解释。</td>
+</tr>
+</tbody></table>
+<p><strong>1.实例</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template, request, redirect, abort, url_for, jsonify, flash</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.secret_key = <span class="string">'flash secret_key'</span>  <span class="comment"># flash使用私钥</span></span><br><span class="line"><span class="meta">@app.route('/projects')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">all_projects</span><span class="params">()</span>:</span></span><br><span class="line">    projects = [</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"项目1"</span>, <span class="string">"interface_num"</span>: <span class="number">23</span>, <span class="string">"create_time"</span>: <span class="string">"2019/1"</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"项目2"</span>, <span class="string">"interface_num"</span>: <span class="number">24</span>, <span class="string">"create_time"</span>: <span class="string">"2019/1"</span>&#125;,</span><br><span class="line">        &#123;<span class="string">"name"</span>: <span class="string">"项目3"</span>, <span class="string">"interface_num"</span>: <span class="number">25</span>, <span class="string">"create_time"</span>: <span class="string">"2019/1"</span>&#125;,</span><br><span class="line">    ]</span><br><span class="line">    flash(<span class="string">"flash test"</span>)</span><br><span class="line">    <span class="comment"># return jsonify(&#123;"msg":[p for p in projects]&#125;)</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>, projects=projects)</span><br></pre></td></tr></table></figure>
+
+<p>html文件：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>登录页<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>jinja2演示<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;&#123; projects &#125;&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>flash<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;&#123; get_flashed_messages() &#125;&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>jinja2循环语句<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;% for project in projects %&#125;</span><br><span class="line">    &#123;% set name = project.name %&#125;</span><br><span class="line">    &#123;% if not loop.last %&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>序号：&#123;&#123; loop.nextitem.name &#125;&#125;, 项目名称：&#123;&#123; name &#125;&#125;， 接口数量：&#123;&#123; project['interface_num'] &#125;&#125;，</span><br><span class="line">            创建时间：&#123;&#123; project['create_time'] &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123;% else %&#125;</span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>序号：&#123;&#123; loop.index &#125;&#125;, 项目名称：&#123;&#123; name &#125;&#125;， 接口数量：&#123;&#123; project['interface_num'] &#125;&#125;，</span><br><span class="line">            创建时间：&#123;&#123; project['create_time'] &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.效果演示：</strong></p>
+<p><img src="/img/python/flask/flask07.png" alt="img"></p>
+<h2 id="拓展："><a href="#拓展：" class="headerlink" title="拓展："></a><strong>拓展：</strong></h2><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/23374605" target="_blank" rel="noopener">flash()用法</a></li>
+<li><a href="https://www.crifan.com/flask_app_secret_key_meaning_and_usage/" target="_blank" rel="noopener">Flask的app的secret_key的含义和作用</a></li>
+<li><a href="https://www.cnblogs.com/cwp-bg/p/9971023.html" target="_blank" rel="noopener">flaks_upload</a></li>
+</ul>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><p>作者示例文件，<a href="https://github.com/icon-python/python-study/tree/master/flask07" target="_blank" rel="noopener">点击查看</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -205,285 +313,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/12/flask06-模板引擎/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/10/flask05-请求与响应/" class="archive-article-date">
-  	<time datetime="2019-07-10T09:30:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/10/flask05-请求与响应/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flask05-请求与响应</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/10/flask05-请求与响应/">flask05-请求与响应</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">flask</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/06/flask使用04-可插拔视图函数View/" class="archive-article-date">
-  	<time datetime="2019-07-06T07:40:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/06/flask使用04-可插拔视图函数View/">flask使用04--可插拔视图函数View</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">flask</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/05/flask使用03/" class="archive-article-date">
-  	<time datetime="2019-07-05T10:36:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/05/flask使用03/">flask使用03</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">flask</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/03/flask初识02/" class="archive-article-date">
-  	<time datetime="2019-07-03T13:35:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/03/flask初识02/">flask初识02</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">flask</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/29/flask初识/" class="archive-article-date">
-  	<time datetime="2019-06-29T06:18:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/29/flask初识/">flask初识</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">flask</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/28/webserver/" class="archive-article-date">
-  	<time datetime="2019-06-28T05:22:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/28/webserver/">webserver</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/26/数据类型/" class="archive-article-date">
-  	<time datetime="2019-06-26T00:47:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/26/数据类型/">数据类型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -506,8 +435,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
