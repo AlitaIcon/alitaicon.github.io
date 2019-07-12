@@ -37,7 +37,11 @@ def make_response_function():
 
 **3).返回状态码**
 
+
+
 ![img](/img/python/flask/http_res_code.png)
+
+
 
 \>>>方式一：在make_response()中传入状态码
 
