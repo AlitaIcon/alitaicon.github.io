@@ -9,6 +9,7 @@ tags: [flask]
 make_response()，相当于DJango中的HttpResponse。
 
 **1).返回内容**
+
 ```python
 from flask import make_response
 
@@ -57,8 +58,7 @@ from flask import make_response
 def make_response_function():
     temp = render_template('hello.html')
     response = make_response(temp)
-    # return response, 200
-    return response, "202  ok"
+    return response, 200
 ```
 
 - 将上传文件变成可访问资源：
@@ -136,6 +136,7 @@ file.read([size])从文件读取指定的字节数，如果未给定或为负则
 3、修改单个项目数据。
 4、创建项目
 5、删除项目
+
 注意： 客户端不管是浏览器还是手机，postman, 只要根据接口文档要求发送了对应的请求，就能操作对应接口的资源。
 
 参考：
