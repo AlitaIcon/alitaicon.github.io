@@ -16,7 +16,9 @@ def login(username):
     session['user'] = username
     return render_template('index.html')
 ```
+
 <!-- more -->
+
 ```html
 {% if session.user %}
     {% set user = session.user %}
