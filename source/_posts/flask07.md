@@ -213,7 +213,7 @@ console.log(users[0].name);
 
 ### 参考：
 相关文章：http://www.bjhee.com/jinja2-filter.html
-flask官网全部过滤器：http://docs.jinkan.org/docs/jinja2/templates.html#builtin-tests
+jinja2官网全部过滤器：http://docs.jinkan.org/docs/jinja2/templates.html#builtin-tests
 作者示例文件，[点击查看](https://github.com/icon-python/python-study/tree/master/flask08)
 
 
