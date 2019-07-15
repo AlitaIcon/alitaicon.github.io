@@ -1,5 +1,5 @@
 ---
-title: flask初识02
+title: flask初识02-使用步骤
 date: 2019-07-03 21:35:26
 tags: [flask]
 ---
@@ -10,7 +10,7 @@ tags: [flask]
 - 3.开启服务
 
 <!-- more -->
-  
+
 ```python
 import time
 from flask import Flask, render_template

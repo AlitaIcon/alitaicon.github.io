@@ -79,6 +79,10 @@ def get_filename(filename):
 
 ## **2.请求**
 
+- request
+
+  ![img](/img/python/flask/request.png)
+
 - 调试发送ajax请求：
 
 ```javascript

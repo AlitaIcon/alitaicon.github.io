@@ -1,5 +1,5 @@
 ---
-title: flask07
+title: flask07-可以访问类似的全局变量和函数
 date: 2019-07-13 14:07:12
 tags: [flask]
 ---

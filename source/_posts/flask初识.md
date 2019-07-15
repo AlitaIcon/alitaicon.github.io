@@ -1,5 +1,5 @@
 ---
-title: flask初识
+title: flask初识-wsgi
 date: 2019-06-29 14:18:02
 tags: [flask]
 ---
