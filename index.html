@@ -166,6 +166,91 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-flask07" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/13/flask07/">flask07-可以访问类似的全局变量和函数</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/13/flask07/" class="archive-article-date">
+  	<time datetime="2019-07-13T06:07:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="可以访问类似的全局变量和函数"><a href="#可以访问类似的全局变量和函数" class="headerlink" title="可以访问类似的全局变量和函数"></a><strong>可以访问类似的全局变量和函数</strong></h2><p><strong>1.可以访问类似的全局变量.</strong></p>
+<ul>
+<li>g</li>
+<li>request</li>
+<li>session</li>
+<li>config</li>
+<li>url_for<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/login/&lt;username&gt;', endpoint='log')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">(username)</span>:</span></span><br><span class="line">    session[<span class="string">'user'</span>] = username</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+        
+          <a class="article-more-a" href="/2019/07/13/flask07/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">flask</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/13/flask07/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-flask06-模板引擎" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -413,7 +498,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/05/flask使用03/">flask使用03</a>
+      <a class="article-title" href="/2019/07/05/flask使用03/">flask使用03-参数使用</a>
     </h1>
   
 
@@ -497,7 +582,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/03/flask初识02/">flask初识02</a>
+      <a class="article-title" href="/2019/07/03/flask初识02/">flask初识02-使用步骤</a>
     </h1>
   
 
@@ -577,7 +662,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/29/flask初识/">flask初识</a>
+      <a class="article-title" href="/2019/06/29/flask初识/">flask初识-wsgi</a>
     </h1>
   
 

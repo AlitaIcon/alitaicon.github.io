@@ -17,7 +17,8 @@
 <meta property="og:description" content="1.make_response 响应make_response()，相当于DJango中的HttpResponse。 1).返回内容 123456from flask import make_response@app.route(&apos;/makeresponse/&apos;)def make_response_function():    response = make_response(&apos;&amp;lt;h2&amp;gt">
 <meta property="og:locale" content="ch-zh">
 <meta property="og:image" content="http://yoursite.com/img/python/flask/http_res_code.png">
-<meta property="og:updated_time" content="2019-07-12T08:40:48.453Z">
+<meta property="og:image" content="http://yoursite.com/img/python/flask/request.png">
+<meta property="og:updated_time" content="2019-07-15T06:38:53.301Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flask05-请求与响应">
 <meta name="twitter:description" content="1.make_response 响应make_response()，相当于DJango中的HttpResponse。 1).返回内容 123456from flask import make_response@app.route(&apos;/makeresponse/&apos;)def make_response_function():    response = make_response(&apos;&amp;lt;h2&amp;gt">
@@ -197,7 +198,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> make_response</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/makeresponse/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_response_function</span><span class="params">()</span>:</span></span><br><span class="line">    temp = render_template(<span class="string">'hello.html'</span>)</span><br><span class="line">    response = make_response(temp)</span><br><span class="line">    <span class="keyword">return</span> response</span><br></pre></td></tr></table></figure>
 
 <p>&gt;&gt;&gt;注意：make_response 想要返回页面，不能直接写做：make_response(‘hello.html’)，必须用render_template(‘hello.html’)形式。</p>
-<p><strong>3).返回状态码</strong></p>
+<p><strong>3).返回状态码</strong> </p>
 <p><img src="/img/python/flask/http_res_code.png" alt="img"></p>
 <p>&gt;&gt;&gt;方式一：在make_response()中传入状态码</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> make_response</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/makeresponse/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_response_function</span><span class="params">()</span>:</span></span><br><span class="line">    temp = render_template(<span class="string">'hello.html'</span>)</span><br><span class="line">    response = make_response(temp, <span class="number">200</span>)</span><br><span class="line">    <span class="keyword">return</span> response</span><br></pre></td></tr></table></figure>
@@ -211,7 +212,11 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/upload/&lt;filename&gt;')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_filename</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> send_from_directory(os.getcwd()+<span class="string">'/static/'</span>, filename)</span><br></pre></td></tr></table></figure>
 
 <h2 id="2-请求"><a href="#2-请求" class="headerlink" title="2.请求"></a><strong>2.请求</strong></h2><ul>
-<li>调试发送ajax请求：</li>
+<li><p>request</p>
+<p><img src="/img/python/flask/request.png" alt="img"></p>
+</li>
+<li><p>调试发送ajax请求：</p>
+</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;p onclick=<span class="string">"upload()"</span>&gt;点击发送请求&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    function upload() &#123;</span></span><br><span class="line"><span class="regexp">        $.ajax(&#123;</span></span><br><span class="line"><span class="regexp">            type:"POST",</span></span><br><span class="line"><span class="regexp">            url:"http:/</span><span class="regexp">/127.0.0.1:5000",</span></span><br><span class="line"><span class="regexp">            data:JSON.stringify(&#123;"user":"admin"&#125;),</span></span><br><span class="line"><span class="regexp">            dataType:"json",</span></span><br><span class="line"><span class="regexp">            content_type:"application/</span>json<span class="string">",</span></span><br><span class="line"><span class="string">            success: function (data) &#123;</span></span><br><span class="line"><span class="string">                alert('success'+data)</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        &#125;)</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
 
