@@ -4,7 +4,25 @@ date: 2019-07-13 14:07:12
 tags: [flask]
 ---
 ## **可以访问类似的全局变量和函数**
-**1.内置上下文变量.**
+**1.flash消息闪现**
+
+```python
+@app.route('/flash')
+def just_flash():
+    flash('I am flash, who is looking for me?')
+    return redirect(url_for('projects'))
+```
+
+```html
+<p><a href="{{ url_for('just_flash') }}">flash</a></p>
+{% for message in get_flashed_messages() %}
+    <div>{{ message }}</div>
+{% endfor %}
+```
+
+使用flash()函数发送的消息会存储在session中，在模板中使用全局函数get_flashed_messages()获取显示，调用get_flashed_messages()，session中的所有消息会被移除。
+
+**2.内置上下文变量.**
 
 - g
 - request
@@ -38,8 +56,9 @@ def login(username):
 <p>template_test</p>
 ```
 ![img](/img/python/flask/gsrc.png)
-**2.函数**
+**3.函数**
 1).自定义过滤器
+
 ```python
 # @app.template_filter('s_time')
 def strf_time(timestamp):
