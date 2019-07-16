@@ -20,7 +20,7 @@ def just_flash():
 {% endfor %}
 ```
 
-使用flash()函数发送的消息会存储在session中，在模板中使用全局函数get_flashed_messages()获取显示，调用get_flashed_messages()，session中的所有消息会被移除。
+使用flash()函数发送的消息会存储在session中，在模板中使用全局函数get_flashed_messages()获取显示，调用get_flashed_messages()，session中的所有消息会被移除。刷新页面该消息不显示。
 
 **2.内置上下文变量.**
 
