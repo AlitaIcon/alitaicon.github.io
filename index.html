@@ -191,7 +191,7 @@
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for('just_flash') &#125;&#125;"</span>&gt;</span>flash<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;% for message in get_flashed_messages() %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
 
-<p>使用flash()函数发送的消息会存储在session中，在模板中使用全局函数get_flashed_messages()获取显示，调用get_flashed_messages()，session中的所有消息会被移除。</p>
+<p>使用flash()函数发送的消息会存储在session中，在模板中使用全局函数get_flashed_messages()获取显示，调用get_flashed_messages()，session中的所有消息会被移除。刷新页面该消息不显示。</p>
 <p><strong>2.内置上下文变量.</strong></p>
 <ul>
 <li>g</li>

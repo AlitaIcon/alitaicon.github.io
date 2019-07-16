@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://yoursite.com/img/python/flask/gsrc.png">
 <meta property="og:image" content="http://yoursite.com/img/python/flask/filter.png">
 <meta property="og:image" content="http://yoursite.com/img/python/flask/context.png">
-<meta property="og:updated_time" content="2019-07-16T05:36:43.954Z">
+<meta property="og:updated_time" content="2019-07-16T05:45:52.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flask07-可以访问类似的全局变量和函数">
 <meta name="twitter:description" content="可以访问类似的全局变量和函数1.flash消息闪现 1234@app.route(&apos;/flash&apos;)def just_flash():    flash(&apos;I am flash, who is looking for me?&apos;)    return redirect(url_for(&apos;projects&apos;))  1234&amp;lt;p&amp;gt;&amp;lt;a href=&quot;&amp;#123;&amp;#123; url_fo">
@@ -194,7 +194,7 @@
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for('just_flash') &#125;&#125;"</span>&gt;</span>flash<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;% for message in get_flashed_messages() %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
 
-<p>使用flash()函数发送的消息会存储在session中，在模板中使用全局函数get_flashed_messages()获取显示，调用get_flashed_messages()，session中的所有消息会被移除。</p>
+<p>使用flash()函数发送的消息会存储在session中，在模板中使用全局函数get_flashed_messages()获取显示，调用get_flashed_messages()，session中的所有消息会被移除。刷新页面该消息不显示。</p>
 <p><strong>2.内置上下文变量.</strong></p>
 <ul>
 <li>g</li>
