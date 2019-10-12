@@ -6,23 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>flask05-请求与响应 | Alita的个人博客</title>
+  <title>restful_api_Django基础阶段综合演练 | Alita的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.make_response 响应make_response()，相当于DJango中的HttpResponse。 1).返回内容 123456from flask import make_response@app.route(&apos;/makeresponse/&apos;)def make_response_function():    response = make_response(&apos;&amp;lt;h2&amp;gt">
-<meta name="keywords" content="flask">
+  <meta name="description" content="一、必做题">
+<meta name="keywords" content="Django">
 <meta property="og:type" content="article">
-<meta property="og:title" content="flask05-请求与响应">
-<meta property="og:url" content="http://yoursite.com/2019/07/10/flask05-请求与响应/index.html">
+<meta property="og:title" content="restful_api_Django基础阶段综合演练">
+<meta property="og:url" content="http://yoursite.com/2019/10/12/restful_api_Django基础阶段综合演练/index.html">
 <meta property="og:site_name" content="Alita的个人博客">
-<meta property="og:description" content="1.make_response 响应make_response()，相当于DJango中的HttpResponse。 1).返回内容 123456from flask import make_response@app.route(&apos;/makeresponse/&apos;)def make_response_function():    response = make_response(&apos;&amp;lt;h2&amp;gt">
+<meta property="og:description" content="一、必做题">
 <meta property="og:locale" content="ch-zh">
-<meta property="og:image" content="http://yoursite.com/img/python/flask/http_res_code.png">
-<meta property="og:image" content="http://yoursite.com/img/python/flask/request.png">
-<meta property="og:updated_time" content="2019-07-15T06:38:53.301Z">
+<meta property="og:updated_time" content="2019-10-12T03:08:12.175Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="flask05-请求与响应">
-<meta name="twitter:description" content="1.make_response 响应make_response()，相当于DJango中的HttpResponse。 1).返回内容 123456from flask import make_response@app.route(&apos;/makeresponse/&apos;)def make_response_function():    response = make_response(&apos;&amp;lt;h2&amp;gt">
-<meta name="twitter:image" content="http://yoursite.com/img/python/flask/http_res_code.png">
+<meta name="twitter:title" content="restful_api_Django基础阶段综合演练">
+<meta name="twitter:description" content="一、必做题">
   
     <link rel="alternative" href="/atom.xml" title="Alita的个人博客" type="application/atom+xml">
   
@@ -174,80 +171,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-flask05-请求与响应" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-restful_api_Django基础阶段综合演练" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      flask05-请求与响应
+      restful_api_Django基础阶段综合演练
     </h1>
   
 
         
-        <a href="/2019/07/10/flask05-请求与响应/" class="archive-article-date">
-  	<time datetime="2019-07-10T09:30:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-10</time>
+        <a href="/2019/10/12/restful_api_Django基础阶段综合演练/" class="archive-article-date">
+  	<time datetime="2019-10-12T02:27:54.336Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-make-response-响应"><a href="#1-make-response-响应" class="headerlink" title="1.make_response 响应"></a><strong>1.make_response 响应</strong></h2><p>make_response()，相当于DJango中的HttpResponse。</p>
-<p><strong>1).返回内容</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> make_response</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/makeresponse/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_response_function</span><span class="params">()</span>:</span></span><br><span class="line">    response = make_response(<span class="string">'&lt;h2&gt;羞羞哒&lt;/h2&gt;'</span>)</span><br><span class="line">    <span class="keyword">return</span> response, <span class="number">404</span></span><br></pre></td></tr></table></figure>
+        <h3 id="一、必做题"><a href="#一、必做题" class="headerlink" title="一、必做题"></a>一、必做题</h3><a id="more"></a>
 
-<a id="more"></a>
-
-<p><strong>2).返回页面</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> make_response</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/makeresponse/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_response_function</span><span class="params">()</span>:</span></span><br><span class="line">    temp = render_template(<span class="string">'hello.html'</span>)</span><br><span class="line">    response = make_response(temp)</span><br><span class="line">    <span class="keyword">return</span> response</span><br></pre></td></tr></table></figure>
-
-<p>&gt;&gt;&gt;注意：make_response 想要返回页面，不能直接写做：make_response(‘hello.html’)，必须用render_template(‘hello.html’)形式。</p>
-<p><strong>3).返回状态码</strong> </p>
-<p><img src="/img/python/flask/http_res_code.png" alt="img"></p>
-<p>&gt;&gt;&gt;方式一：在make_response()中传入状态码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> make_response</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/makeresponse/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_response_function</span><span class="params">()</span>:</span></span><br><span class="line">    temp = render_template(<span class="string">'hello.html'</span>)</span><br><span class="line">    response = make_response(temp, <span class="number">200</span>)</span><br><span class="line">    <span class="keyword">return</span> response</span><br></pre></td></tr></table></figure>
-
-<p>&gt;&gt;&gt;方式二：直接return状态码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> make_response</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/makeresponse/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_response_function</span><span class="params">()</span>:</span></span><br><span class="line">    temp = render_template(<span class="string">'hello.html'</span>)</span><br><span class="line">    response = make_response(temp)</span><br><span class="line">    <span class="keyword">return</span> response, <span class="number">200</span></span><br></pre></td></tr></table></figure>
-
+<h4 id="1-课堂中对项目数据增删改查的接口实现中-有哪些痛点"><a href="#1-课堂中对项目数据增删改查的接口实现中-有哪些痛点" class="headerlink" title="1.课堂中对项目数据增删改查的接口实现中, 有哪些痛点?"></a>1.课堂中对项目数据增删改查的接口实现中, 有哪些痛点?</h4><p><strong>提示：</strong></p>
+<p>​    a.写出你认为的所有痛点</p>
+<p> 痛点：</p>
 <ul>
-<li>将上传文件变成可访问资源：</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/upload/&lt;filename&gt;')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_filename</span><span class="params">(filename)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> send_from_directory(os.getcwd()+<span class="string">'/static/'</span>, filename)</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-请求"><a href="#2-请求" class="headerlink" title="2.请求"></a><strong>2.请求</strong></h2><ul>
-<li><p>request</p>
-<p><img src="/img/python/flask/request.png" alt="img"></p>
+<li><p>对模型和json字符串间的正反序列化操作频繁，却不能封装</p>
 </li>
-<li><p>调试发送ajax请求：</p>
+<li><p>重复代码多，冗余度高</p>
+</li>
+<li><p>请求数据验证过多，处理很麻烦</p>
+</li>
+<li><p>返回状态响应码没有语义化</p>
 </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;p onclick=<span class="string">"upload()"</span>&gt;点击发送请求&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    function upload() &#123;</span></span><br><span class="line"><span class="regexp">        $.ajax(&#123;</span></span><br><span class="line"><span class="regexp">            type:"POST",</span></span><br><span class="line"><span class="regexp">            url:"http:/</span><span class="regexp">/127.0.0.1:5000",</span></span><br><span class="line"><span class="regexp">            data:JSON.stringify(&#123;"user":"admin"&#125;),</span></span><br><span class="line"><span class="regexp">            dataType:"json",</span></span><br><span class="line"><span class="regexp">            content_type:"application/</span>json<span class="string">",</span></span><br><span class="line"><span class="string">            success: function (data) &#123;</span></span><br><span class="line"><span class="string">                alert('success'+data)</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        &#125;)</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-通过思维导图总结restful风格的规范"><a href="#2-通过思维导图总结restful风格的规范" class="headerlink" title="2.通过思维导图总结restful风格的规范"></a>2.通过思维导图总结restful风格的规范</h4><p><strong>提示：</strong></p>
+<p>​    a.上传xmind文件或者将思维导图截图上传</p>
+<p> <a href="http://naotu.baidu.com/file/2bb8dfdc9ba85f78f6bbb16219403ee9?token=2cb7b44d90649107" target="_blank" rel="noopener">http://naotu.baidu.com/file/2bb8dfdc9ba85f78f6bbb16219403ee9?token=2cb7b44d90649107</a></p>
+<h3 id="二、选做题"><a href="#二、选做题" class="headerlink" title="二、选做题"></a>二、选做题</h3><h4 id="1-使用已学知识实现对Interface数据的增删改查接口"><a href="#1-使用已学知识实现对Interface数据的增删改查接口" class="headerlink" title="1.使用已学知识实现对Interface数据的增删改查接口"></a>1.使用已学知识实现对Interface数据的增删改查接口</h4><p><strong>提示：</strong></p>
+<p>​    a.将程序代码上传</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新增</span></span><br><span class="line"><span class="comment"># 方法1</span></span><br><span class="line">i = Interface(name=<span class="string">'注册'</span>, url=<span class="string">'http://127.0.0.1:8000/regsiter'</span>, data=&#123;<span class="string">"username"</span>:<span class="string">"admin"</span>, <span class="string">"pwd"</span>:<span class="string">"123"</span>&#125;, projects_id=<span class="number">1</span>)</span><br><span class="line">i.save()</span><br><span class="line"><span class="comment"># 方法2</span></span><br><span class="line">Interface.objects.create(name=<span class="string">'注册3'</span>, url=<span class="string">'http://127.0.0.1:8000/regsiter3'</span>, data=&#123;<span class="string">"username"</span>:<span class="string">"admin"</span>, <span class="string">"pwd"</span>:<span class="string">"123"</span>&#125;, projects=Projects.objects.get(pk=<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询</span></span><br><span class="line"><span class="comment"># 排序查询</span></span><br><span class="line">Interface.objects.filter(id__gt=<span class="number">3</span>).order_by(<span class="string">'name'</span>)</span><br><span class="line">Interface.objects.all().order_by(<span class="string">'-id'</span>)</span><br><span class="line">Interface.objects.all().order_by(<span class="string">'name'</span>, <span class="string">'-id'</span>)</span><br><span class="line"><span class="comment"># 或查询</span></span><br><span class="line">Interface.objects.filter(Q(id=<span class="number">3</span>) | Q(id=<span class="number">4</span>))</span><br><span class="line"><span class="comment"># 与查询</span></span><br><span class="line">Interface.objects.filter(name__contains=<span class="string">'小'</span>, leader=<span class="string">'test'</span>)</span><br><span class="line">Interface.objects.filter(name__contains=<span class="string">'小'</span>).filter(leader=<span class="string">'test'</span>)</span><br><span class="line"><span class="comment"># 分组查询，聚合函数查询</span></span><br><span class="line">Interface.objects.all().values(<span class="string">"name"</span>).annotate(name_num=Count(<span class="string">"name"</span>))</span><br><span class="line"><span class="comment"># 关联查询</span></span><br><span class="line"><span class="comment"># 通过子表表查询父表的信息</span></span><br><span class="line">Interface.objects.get(pk=<span class="number">1</span>).projects.name</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定字段更新</span></span><br><span class="line">Interface.objects.filter(pk=<span class="number">1</span>).update(name=<span class="string">'登录2'</span>)</span><br><span class="line"><span class="comment"># 更新部分字段，但是会更新所有</span></span><br><span class="line">qs_u = Interface.objects.filter(id=<span class="number">2</span>)</span><br><span class="line">qs_u.name = <span class="string">'登录3'</span></span><br><span class="line">qs_u.save()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除</span></span><br><span class="line">Interface.objects.filter(id=<span class="number">1</span>).delete()</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>构造响应头：</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 方法1：</span></span><br><span class="line">    <span class="comment"># return json.dumps(&#123;"username": "alita"&#125;), &#123;"content-type":"application/json"&#125;</span></span><br><span class="line">    <span class="comment"># 方法2： make_response() Response()</span></span><br><span class="line">    <span class="comment"># r = make_response(json.dumps(&#123;"username": "alita"&#125;), &#123;"content-type":"application/json"&#125;)</span></span><br><span class="line">    <span class="comment"># r.status = '203'</span></span><br><span class="line">    <span class="comment"># r.content_type = 'application/json'</span></span><br><span class="line">    <span class="comment"># 方法3： jsonify()</span></span><br><span class="line">    r = jsonify(&#123;<span class="string">"username"</span>: <span class="string">"阿丽塔"</span>&#125;)</span><br><span class="line">    <span class="comment"># 修改成 201</span></span><br><span class="line">    <span class="comment"># r.status = '201'</span></span><br><span class="line">    <span class="keyword">return</span> r, <span class="string">"202  ok"</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="3-路由设计思路"><a href="#3-路由设计思路" class="headerlink" title="3.路由设计思路"></a><strong>3.路由设计思路</strong></h2><p>前后端不分离，模板渲染：1）一个视图函数写一个url</p>
-<ul>
-<li>#url: 获取所有的项目： /projects.txt, def list_projects</li>
-<li>#url: 获取单个的项目内容： /project/<id>, def get_project() 模板</id></li>
-<li>#url: 修改某个项目的内容： /project_edit/<id>, def edit_project()</id></li>
-</ul>
-<p>前后端分离：rest method:get, post, delete,</p>
-<ul>
-<li>#/project/<id> 类的视图：def get:单个资源</id></li>
-<li>#/projects.txt</li>
-<li># DRF</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file.read([size])从文件读取指定的字节数，如果未给定或为负则读取所有。</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-作业"><a href="#4-作业" class="headerlink" title="4.作业"></a><strong>4.作业</strong></h2><p>1、返回所有项目数据，包含：项目id, 项目名称，项目简介，创建时间，修改时间<br>2、根据id获取单个项目数据。<br>3、修改单个项目数据。<br>4、创建项目<br>5、删除项目</p>
-<p>注意： 客户端不管是浏览器还是手机，postman, 只要根据接口文档要求发送了对应的请求，就能操作对应接口的资源。</p>
-<p>参考：<br>作者示例文件，<a href="https://github.com/icon-python/python-study/tree/master/flask06/homework" target="_blank" rel="noopener">点击查看</a></p>
 
       
 
@@ -287,7 +252,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">flask</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Django</a>
         		</li>
       		
 		</ul>
@@ -343,7 +308,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/10/flask05-请求与响应/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/12/restful_api_Django基础阶段综合演练/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -357,18 +322,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/12/flask06-模板引擎/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          flask06-模板引擎
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/06/flask使用04-可插拔视图函数View/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">flask使用04--可插拔视图函数View</div>
+    <a href="/2019/07/13/flask07/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">flask07-可以访问类似的全局变量和函数</div>
       <i class="icon-circle-right"></i>
     </a>
   
