@@ -118,9 +118,9 @@ menu:
 
 # SubNav
 subnav:
-  github: "#"
-  weibo: "#"
-  rss: "#"
+  github: "https://alitaicon.github.io/"
+  # weibo: "#"
+  # rss: "#"
   zhihu: "#"
   #qq: "#"
   #weixin: "#"
