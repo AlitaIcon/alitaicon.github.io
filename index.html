@@ -173,9 +173,24 @@
     <article id="post-工具篇之termius" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/27/工具篇之termius/">linux 终端工具之 termius！(手机也能使用哦！)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/27/工具篇之termius/" class="archive-article-date">
+  	<time datetime="2019-11-27T09:07:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="linux-终端工具之-termius！-手机也能使用哦！"><a href="#linux-终端工具之-termius！-手机也能使用哦！" class="headerlink" title="linux 终端工具之 termius！(手机也能使用哦！)"></a>linux 终端工具之 termius！(手机也能使用哦！)</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>termius是一款全平台的远程终端，支持几乎所有平台：</p>
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>termius是一款全平台的远程终端，支持几乎所有平台：</p>
 <ul>
 <li>Windows</li>
 <li>Linux</li>
@@ -194,6 +209,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tools</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -325,7 +351,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="可以访问类似的全局变量和函数"><a href="#可以访问类似的全局变量和函数" class="headerlink" title="可以访问类似的全局变量和函数"></a><strong>可以访问类似的全局变量和函数</strong></h2><p><strong>1.flash消息闪现</strong></p>
+        <p><strong>1.flash消息闪现</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/flash')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">just_flash</span><span class="params">()</span>:</span></span><br><span class="line">    flash(<span class="string">'I am flash, who is looking for me?'</span>)</span><br><span class="line">    <span class="keyword">return</span> redirect(url_for(<span class="string">'projects'</span>))</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for('just_flash') &#125;&#125;"</span>&gt;</span>flash<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;% for message in get_flashed_messages() %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
@@ -578,7 +604,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="flask可插拔视图函数View"><a href="#flask可插拔视图函数View" class="headerlink" title="flask可插拔视图函数View"></a><strong>flask可插拔视图函数View</strong></h2><ul>
+        <ul>
 <li><strong>Class-View</strong></li>
 </ul>
         
@@ -656,7 +682,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="flask参数使用"><a href="#flask参数使用" class="headerlink" title="flask参数使用"></a><strong>flask参数使用</strong></h2><ul>
+        <ul>
 <li><strong>唯一标识id</strong></li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> uuid</span><br><span class="line">uuid.uuid4()</span><br></pre></td></tr></table></figure>
@@ -1057,11 +1083,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
             
             <div class="clearfix"></div>

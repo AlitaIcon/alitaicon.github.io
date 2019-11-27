@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>flask07-可以访问类似的全局变量和函数 | Alita的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="可以访问类似的全局变量和函数1.flash消息闪现 1234@app.route(&apos;/flash&apos;)def just_flash():    flash(&apos;I am flash, who is looking for me?&apos;)    return redirect(url_for(&apos;projects&apos;))  1234&amp;lt;p&amp;gt;&amp;lt;a href=&quot;&amp;#123;&amp;#123; url_fo">
+  <meta name="description" content="1.flash消息闪现 1234@app.route(&apos;/flash&apos;)def just_flash():    flash(&apos;I am flash, who is looking for me?&apos;)    return redirect(url_for(&apos;projects&apos;))  1234&amp;lt;p&amp;gt;&amp;lt;a href=&quot;&amp;#123;&amp;#123; url_for(&apos;just_flash&apos;">
 <meta name="keywords" content="flask">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flask07-可以访问类似的全局变量和函数">
 <meta property="og:url" content="http://yoursite.com/2019/07/13/flask07/index.html">
 <meta property="og:site_name" content="Alita的个人博客">
-<meta property="og:description" content="可以访问类似的全局变量和函数1.flash消息闪现 1234@app.route(&apos;/flash&apos;)def just_flash():    flash(&apos;I am flash, who is looking for me?&apos;)    return redirect(url_for(&apos;projects&apos;))  1234&amp;lt;p&amp;gt;&amp;lt;a href=&quot;&amp;#123;&amp;#123; url_fo">
+<meta property="og:description" content="1.flash消息闪现 1234@app.route(&apos;/flash&apos;)def just_flash():    flash(&apos;I am flash, who is looking for me?&apos;)    return redirect(url_for(&apos;projects&apos;))  1234&amp;lt;p&amp;gt;&amp;lt;a href=&quot;&amp;#123;&amp;#123; url_for(&apos;just_flash&apos;">
 <meta property="og:locale" content="ch-zh">
 <meta property="og:image" content="http://yoursite.com/img/python/flask/gsrc.png">
 <meta property="og:image" content="http://yoursite.com/img/python/flask/filter.png">
 <meta property="og:image" content="http://yoursite.com/img/python/flask/context.png">
-<meta property="og:updated_time" content="2019-10-25T06:16:42.785Z">
+<meta property="og:updated_time" content="2019-11-27T09:08:29.092Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flask07-可以访问类似的全局变量和函数">
-<meta name="twitter:description" content="可以访问类似的全局变量和函数1.flash消息闪现 1234@app.route(&apos;/flash&apos;)def just_flash():    flash(&apos;I am flash, who is looking for me?&apos;)    return redirect(url_for(&apos;projects&apos;))  1234&amp;lt;p&amp;gt;&amp;lt;a href=&quot;&amp;#123;&amp;#123; url_fo">
+<meta name="twitter:description" content="1.flash消息闪现 1234@app.route(&apos;/flash&apos;)def just_flash():    flash(&apos;I am flash, who is looking for me?&apos;)    return redirect(url_for(&apos;projects&apos;))  1234&amp;lt;p&amp;gt;&amp;lt;a href=&quot;&amp;#123;&amp;#123; url_for(&apos;just_flash&apos;">
 <meta name="twitter:image" content="http://yoursite.com/img/python/flask/gsrc.png">
   
     <link rel="alternative" href="/atom.xml" title="Alita的个人博客" type="application/atom+xml">
@@ -193,7 +193,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="可以访问类似的全局变量和函数"><a href="#可以访问类似的全局变量和函数" class="headerlink" title="可以访问类似的全局变量和函数"></a><strong>可以访问类似的全局变量和函数</strong></h2><p><strong>1.flash消息闪现</strong></p>
+        <p><strong>1.flash消息闪现</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route('/flash')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">just_flash</span><span class="params">()</span>:</span></span><br><span class="line">    flash(<span class="string">'I am flash, who is looking for me?'</span>)</span><br><span class="line">    <span class="keyword">return</span> redirect(url_for(<span class="string">'projects'</span>))</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for('just_flash') &#125;&#125;"</span>&gt;</span>flash<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">&#123;% for message in get_flashed_messages() %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endfor %&#125;</span><br></pre></td></tr></table></figure>
@@ -479,11 +479,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tools</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
             
             <div class="clearfix"></div>
