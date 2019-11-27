@@ -4,7 +4,6 @@ date: 2019-07-06 15:40:40
 tags: [flask]
 ---
 
-## **flask可插拔视图函数View**
 - **Class-View**
 
 <!-- more -->
