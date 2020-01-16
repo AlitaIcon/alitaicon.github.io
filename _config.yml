@@ -123,7 +123,7 @@ subnav:
   github: "https://alitaicon.github.io/"
   # weibo: "#"
   # rss: "#"
-  zhihu: "#"
+  zhihu: "https://zhuanlan.zhihu.com/alitaicon-flask"
   #qq: "#"
   #weixin: "#"
   #jianshu: "#"
