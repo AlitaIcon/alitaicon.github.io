@@ -112,7 +112,6 @@ jsonContent:
 
 menu:
   主页: /
-  Django: /tags/Django/
   flask: /tags/flask/
   python: /tags/python/  
   工具: /tags/tools/
